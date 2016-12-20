@@ -56,6 +56,7 @@ public class AppMarket extends HttpServlet {
 				map.put("app_name", appBean.appName);
 				map.put("app_length", appBean.appLength);
 				map.put("app_url", appBean.appUrl);
+				map.put("app_date", appBean.appDate);
 				list.add(map);
 			}
 
