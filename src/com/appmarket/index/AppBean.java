@@ -1,10 +1,12 @@
 package com.appmarket.index;
 
-public class AppBean {
+public class AppBean implements Comparable<AppBean> {
 
 	public String appName;
 	public long appLength;
 	public String appUrl;
+	public String appDate;
+	public long appCreateAt;
 	
 	public AppBean(){
 		
@@ -33,7 +35,29 @@ public class AppBean {
 	public void setAppUrl(String appUrl) {
 		this.appUrl = appUrl;
 	}
-	
-	
+
+	public String getAppDate() {
+		return appDate;
+	}
+
+	public void setAppDate(String appDate) {
+		this.appDate = appDate;
+	}
+
+	public long getAppCreateAt() {
+		return appCreateAt;
+	}
+
+	public void setAppCreateAt(long appCreateAt) {
+		this.appCreateAt = appCreateAt;
+	}
+
+	@Override
+	public int compareTo(AppBean another) {
+	    if (this.appCreateAt == another.appCreateAt) {
+	        return 0;
+	    }
+	    return this.appCreateAt < another.appCreateAt ? 1 : -1;
+	}
 	
 }

@@ -2,6 +2,7 @@ package com.appmarket.index;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class FileUtil {
@@ -19,9 +20,12 @@ public class FileUtil {
 				app.appName = appFile.getName();
 				app.appLength = appFile.length();
 				app.appUrl = "/jk4/downloadfile?filename=" + appFile.getName();
+				app.appDate = TimeUtil.getDateFromTimestampYMDHMS(appFile.lastModified());
+				app.appCreateAt = appFile.lastModified();
 				appBeans.add(app);
 			}
 		}
+		Collections.sort(appBeans);
 		return appBeans;
 	}
 

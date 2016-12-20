@@ -26,7 +26,7 @@
 <div class="list">
      <ul>
       <c:forEach items="${appBeans}" var="appBean">
-          <li><a href="${appBean.appUrl}"><p>${appBean.appName}&nbsp;&nbsp;&nbsp; <span>下载</span></p></a></li>
+          <li><a href="${appBean.appUrl}"><p>${appBean.appName}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>${appBean.appDate}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>下载</span></p></a></li>
       </c:forEach>
      </ul>
 </div>
