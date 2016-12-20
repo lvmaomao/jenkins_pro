@@ -1,6 +1,5 @@
 package com.appmarket.index;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -13,6 +12,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.kuangwen.jenkins.util.PropertiesUtil;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -43,10 +44,7 @@ public class AppMarket extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
-
-		String rootPath = getServletContext().getRealPath("/").replace("\\", "/");
-		String path = rootPath + FileUtil.DIR;
-		List<AppBean> appBeans = FileUtil.getFiles(path);
+		List<AppBean> appBeans = FileUtil.getFiles(PropertiesUtil.getValue(PropertiesUtil.DOWN_LOAD_PATH));
 		JSONObject jsonObject = new JSONObject();
 		JSONArray jsonArray = new JSONArray();
 

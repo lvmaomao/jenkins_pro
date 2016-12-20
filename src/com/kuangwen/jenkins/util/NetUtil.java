@@ -2,31 +2,21 @@ package com.kuangwen.jenkins.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
 
 public class NetUtil {
 	private static String token = "";
 	static{
-		try {
-			InputStream in = NetUtil.class.getClassLoader().getResourceAsStream("local.properties");
-			Properties properties = new Properties();
-			properties.load(in);
-			token = properties.getProperty("token");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		token = PropertiesUtil.getValue(PropertiesUtil.TOKEN);
 	}
 
-    /**
+	/**
      * 向指定 URL 发送POST方法的请求
      * 
      * @param url

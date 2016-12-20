@@ -1,9 +1,7 @@
 package com.appmarket.index;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
-import java.util.Properties;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kuangwen.jenkins.util.NetUtil;
+import com.kuangwen.jenkins.util.PropertiesUtil;
 
 /**
  * Servlet implementation class IndexService
@@ -39,9 +37,7 @@ public class Index extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 
-		String rootPath = getServletContext().getRealPath("/").replace("\\", "/");
-		String path = rootPath + FileUtil.DIR;
-		List<AppBean> appBeans = FileUtil.getFiles(path);
+		List<AppBean> appBeans = FileUtil.getFiles(PropertiesUtil.getValue(PropertiesUtil.DOWN_LOAD_PATH));
 		if (appBeans != null && !appBeans.isEmpty()) {
 			request.setAttribute("appBeans", appBeans);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
