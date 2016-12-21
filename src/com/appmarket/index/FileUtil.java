@@ -19,7 +19,7 @@ public class FileUtil {
 				app = new AppBean();
 				app.appName = appFile.getName();
 				app.appLength = appFile.length();
-				app.appUrl = "/jk4/downloadfile?filename=" + appFile.getName();
+				app.appUrl = "downloadfile?filename=" + appFile.getName();
 				app.appDate = TimeUtil.getDateFromTimestampYMDHMS(appFile.lastModified());
 				app.appCreateAt = appFile.lastModified();
 				appBeans.add(app);
