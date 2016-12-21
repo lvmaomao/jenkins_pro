@@ -3,10 +3,11 @@ package com.appmarket.index;
 public class AppBean implements Comparable<AppBean> {
 
 	public String appName;
-	public long appLength;
+	public long appLength;//文件长度 long
 	public String appUrl;
 	public String appDate;
 	public long appCreateAt;
+	public String appSize;//文件大小 单位M
 	
 	public AppBean(){
 		
@@ -50,6 +51,15 @@ public class AppBean implements Comparable<AppBean> {
 
 	public void setAppCreateAt(long appCreateAt) {
 		this.appCreateAt = appCreateAt;
+	}
+
+	
+	public String getAppSize() {
+		return appSize;
+	}
+
+	public void setAppSize(String appSize) {
+		this.appSize = appSize;
 	}
 
 	@Override

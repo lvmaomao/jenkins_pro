@@ -22,6 +22,7 @@ public class FileUtil {
 				app.appUrl = "downloadfile?filename=" + appFile.getName();
 				app.appDate = TimeUtil.getDateFromTimestampYMDHMS(appFile.lastModified());
 				app.appCreateAt = appFile.lastModified();
+				app.appSize = String.format("%.2f MB", (double) appFile.length() / 1024 /1024);
 				appBeans.add(app);
 			}
 		}

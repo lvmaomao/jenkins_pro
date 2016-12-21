@@ -13,8 +13,8 @@
 <head>
 <base href="<%=basePath%>" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width"/>
-<meta name="viewport" content="initial-scale=1.0,user-scalable=no"/>
+<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="stylesheet" type="text/css" href="css/list.css">
@@ -22,13 +22,21 @@
 <link href="./resource/list.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<div class="header"><p><a href=""></a><span>轻松筹Android 内测APK下载</span></p></div>
-<div class="list">
-     <ul>
-      <c:forEach items="${appBeans}" var="appBean">
-          <li><a href="${appBean.appUrl}"><p>${appBean.appName}&nbsp;&nbsp;<span>${appBean.appDate}</span></p></a></li>
-      </c:forEach>
-     </ul>
-</div>
+	<div class="header">
+		<p>
+			<a href=""></a><span>轻松筹Android 内测APK下载</span>
+		</p>
+	</div>
+	<div>
+		<span style="color: red" id="message">${message}</span>
+	</div>
+	<div class="list">
+		<ul>
+			<c:forEach items="${appBeans}" var="appBean">
+				<li><a href="${appBean.appUrl}"><p><span>${appBean.appName}</span>&nbsp;&nbsp;<span>${appBean.appDate}&nbsp;<span>${appBean.appSize}</span>
+						</p></a></li>
+			</c:forEach>
+		</ul>
+	</div>
 </body>
 </html>
