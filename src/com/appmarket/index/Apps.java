@@ -14,15 +14,15 @@ import com.kuangwen.jenkins.util.PropertiesUtil;
 /**
  * Servlet implementation class IndexService
  */
-@WebServlet("/Index")
-public class Index extends HttpServlet {
+@WebServlet("/apps")
+public class Apps extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Index() {
+	public Apps() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -40,10 +40,10 @@ public class Index extends HttpServlet {
 		List<AppBean> appBeans = FileUtil.getFiles(PropertiesUtil.getValue(PropertiesUtil.DOWN_LOAD_PATH));
 		if (appBeans != null && !appBeans.isEmpty()) {
 			request.setAttribute("appBeans", appBeans);
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/apps.jsp").forward(request, response);
 		} else {
 			request.setAttribute("message", "no data found");
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/apps.jsp").forward(request, response);
 		}
 	}
 
