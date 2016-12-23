@@ -31,4 +31,11 @@ public class LoginAction extends ActionSupport {// 该类继承了ActionSupport�
 			return SUCCESS;
 		return LOGIN;
 	}
+
+	@Override
+	public void validate() {
+		addActionMessage("shishi");
+	}
+	
+	
 }
