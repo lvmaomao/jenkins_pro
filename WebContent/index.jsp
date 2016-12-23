@@ -22,6 +22,6 @@
 <link href="./resource/list.css" type="text/css" rel="stylesheet" />
 </head>
 <body> 
-<jsp:forward page="./apps"></jsp:forward> 
+<jsp:forward page="./welcome.jsp"></jsp:forward> 
 </body>  
 </html>
