@@ -4,7 +4,7 @@
 <hibernate-mapping>
 	<class name="com.kuangwen.jenkins.entity.User" table="t_user">
 		<id name="uid" column="uid">
-			<generator class="native"></generator>
+			<generator class="uuid"></generator>
 		</id>
 		<property name="username" column="username"></property>
 		<property name="password" column="password"></property>

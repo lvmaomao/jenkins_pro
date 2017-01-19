@@ -1,16 +1,11 @@
 package com.kuangwen.jenkins.entity;
 
 public class User {
-	private int uid;
+	private String uid;
 	private String username;
 	private String password;
 	private String address;
-	public int getUid() {
-		return uid;
-	}
-	public void setUid(int uid) {
-		this.uid = uid;
-	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -28,6 +23,16 @@ public class User {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+	@Override
+	public String toString() {
+		return "User [uid=" + uid + ", username=" + username + ", password=" + password + ", address=" + address + "]";
 	}
 	
 }
